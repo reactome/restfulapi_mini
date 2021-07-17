@@ -1,0 +1,6 @@
+Jar files in this folder are not in any maven repository and should be added into the local maven repository using the following command accord to this web page, https://maven.apache.org/guides/mini/guide-3rd-party-jars-local.html:
+
+mvn install:install-file -Dfile=<path-to-file> -DgroupId=<group-id> -DartifactId=<artifact-id> -Dversion=<version> -Dpackaging=<packaging>
+
+Make sure to use the same parameters for the above command as required in the POM file.
+
