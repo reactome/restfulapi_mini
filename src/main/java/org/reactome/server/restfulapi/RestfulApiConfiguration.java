@@ -24,6 +24,8 @@ public class RestfulApiConfiguration {
                                                 env.getProperty("mysql.db"), 
                                                 env.getProperty("mysql.user"), 
                                                 env.getProperty("mysql.pwd"));
+            logger.info("Starting a dumb thread to keep MySQLAdaptor connected to avoid reconnection exception.");
+            dba.initDumbThreadForConnection(); // To keep the DBA running to avoid connection error
             return dba;
         }
         catch(Exception e) {
